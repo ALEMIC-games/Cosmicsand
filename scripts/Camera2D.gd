@@ -16,4 +16,6 @@ func _input(event):
 		zoom += Vector2(0.2, 0.2)
 	if Input.is_action_just_pressed("scru") and zoom > Vector2(0.5, 0.5):
 		zoom -= Vector2(0.2, 0.2)
+	if Input.is_action_just_pressed("ui_home"):
+		position = Vector2()
 
