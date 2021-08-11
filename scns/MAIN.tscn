@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://png/base (2).png" type="Texture" id=1]
 [ext_resource path="res://png/pricel.svg" type="Texture" id=2]
 [ext_resource path="res://scns/background.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scns/Interface.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/CanvasModulate.gd" type="Script" id=5]
 [ext_resource path="res://scripts/Camera2D.gd" type="Script" id=7]
 [ext_resource path="res://scripts/spawner_b.gd" type="Script" id=8]
 [ext_resource path="res://scripts/pricel.gd" type="Script" id=11]
@@ -50,3 +51,20 @@ scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 8 )
 
 [node name="background" parent="." instance=ExtResource( 3 )]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2( -960, -540 )
+scale = Vector2( 0.5, 0.5 )
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 5 )
+
+[node name="evening_morning" type="Timer" parent="CanvasModulate"]
+wait_time = 0.36
+autostart = true
+
+[node name="Timer" type="Timer" parent="CanvasModulate"]
+wait_time = 108.0
+autostart = true
+
+[connection signal="timeout" from="CanvasModulate/evening_morning" to="CanvasModulate" method="_on_evening_morning_timeout"]
+[connection signal="timeout" from="CanvasModulate/Timer" to="CanvasModulate" method="_on_Timer_timeout"]

@@ -44,14 +44,14 @@ wait_time = 216.0
 autostart = true
 
 [node name="Hour" type="Timer" parent="time"]
-wait_time = 36.0
+wait_time = 6.0
 autostart = true
 
 [node name="Min" type="Timer" parent="time"]
 wait_time = 6.0
 autostart = true
 
-[node name="sec" type="Timer" parent="time"]
+[node name="Sec" type="Timer" parent="time"]
 autostart = true
 
 [node name="Menu" type="Sprite" parent="."]
@@ -92,5 +92,5 @@ texture = ExtResource( 1 )
 [connection signal="timeout" from="time/Day" to="time" method="_on_Day_timeout"]
 [connection signal="timeout" from="time/Hour" to="time" method="_on_Hour_timeout"]
 [connection signal="timeout" from="time/Min" to="time" method="_on_Min_timeout"]
-[connection signal="timeout" from="time/sec" to="time" method="_on_sec_timeout"]
+[connection signal="timeout" from="time/Sec" to="time" method="_on_Sec_timeout"]
 [connection signal="pressed" from="Menu/Button" to="Menu" method="_on_Button_pressed"]

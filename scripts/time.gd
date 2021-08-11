@@ -6,7 +6,7 @@ var s = 0
 
 func _process(delta):
 	text = str(d, " DAY  ", h, ":", m, ":", s)
-
+	Singleton.hour = h
 
 func _on_Day_timeout():
 	d += 1
@@ -23,7 +23,7 @@ func _on_Min_timeout():
 	else:
 		m = 0
 
-func _on_sec_timeout():
+func _on_Sec_timeout():
 	if s < 5:
 		s += 1
 	else:
