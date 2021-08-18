@@ -56,21 +56,27 @@ autostart = true
 
 [node name="Menu" type="Sprite" parent="."]
 visible = false
-position = Vector2( 960, 540 )
+position = Vector2( 960, 750 )
 scale = Vector2( 0.7, 0.7 )
 z_index = 100
 texture = ExtResource( 2 )
 script = ExtResource( 4 )
+
+[node name="кнопка" type="Sprite" parent="Menu"]
+position = Vector2( 0, 475 )
+scale = Vector2( 1.5, 1.5 )
+z_index = -1
+texture = ExtResource( 1 )
 
 [node name="Button" type="Button" parent="Menu"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -1132.0
-margin_top = -829.0
-margin_right = -787.0
-margin_bottom = -635.0
+margin_left = -1287.5
+margin_top = -815.0
+margin_right = -632.5
+margin_bottom = -540.0
 theme = ExtResource( 6 )
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -82,12 +88,6 @@ clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="кнопка" type="Sprite" parent="Menu/Button"]
-position = Vector2( 172.5, 100 )
-scale = Vector2( 0.8, 0.8 )
-z_index = -1
-texture = ExtResource( 1 )
 
 [connection signal="timeout" from="time/Day" to="time" method="_on_Day_timeout"]
 [connection signal="timeout" from="time/Hour" to="time" method="_on_Hour_timeout"]

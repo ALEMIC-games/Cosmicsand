@@ -70,12 +70,12 @@ func spawn_wall():
 		spawnling.global_position.y = round(Singleton.position_pricel.y / 50) * 50
 
 func spawn_gun():
-	occupied = str(round(Singleton.position_pricel.x / 50) * 50, round(Singleton.position_pricel.y / 50) * 50)
-	if occupied in Singleton.occupied:
+	occupied = [round(Singleton.position_pricel.x / 50) * 50, round(Singleton.position_pricel.y / 50) * 50]
+	if occupied in Singleton.occupied and freedom == false:
 		nothing = "nothing"
-	elif freedom == true:
+	else:
 		freedom = false
-		Singleton.occupied += [occupied]
+		Singleton.occupied += occupied
 		s = Singleton.position_pricel
 		var spawnling = gun.instance()
 		get_parent().get_parent().add_child(spawnling)
