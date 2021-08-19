@@ -40,7 +40,7 @@ var timing2 = false
 onready var timerbuild = $Timerbuild
 
 func spawn_gen():
-	occupied = str(round(Singleton.position_pricel.x / 50) * 50, round(Singleton.position_pricel.y / 50) * 50)
+	occupied = [str(round(Singleton.position_pricel.x / 50) * 50, " ", round(Singleton.position_pricel.y / 50) * 50)]
 	if occupied in Singleton.occupied:
 		nothing = "nothing"
 	elif freedom == true:
@@ -53,9 +53,10 @@ func spawn_gen():
 		timerbuild.start()
 		spawnling.global_position.x = round(Singleton.position_pricel.x / 50) * 50
 		spawnling.global_position.y = round(Singleton.position_pricel.y / 50) * 50
+		print(occupied)
 
 func spawn_wall():
-	occupied = str(round(Singleton.position_pricel.x / 50) * 50, round(Singleton.position_pricel.y / 50) * 50)
+	occupied = [str(round(Singleton.position_pricel.x / 50) * 50, " ", round(Singleton.position_pricel.y / 50) * 50)]
 	if occupied in Singleton.occupied:
 		nothing = "nothing"
 	elif freedom == true:
@@ -68,14 +69,15 @@ func spawn_wall():
 		timerbuild.start()
 		spawnling.global_position.x = round(Singleton.position_pricel.x / 50) * 50
 		spawnling.global_position.y = round(Singleton.position_pricel.y / 50) * 50
+		print(occupied)
 
 func spawn_gun():
-	occupied = [round(Singleton.position_pricel.x / 50) * 50, round(Singleton.position_pricel.y / 50) * 50]
-	if occupied in Singleton.occupied and freedom == false:
+	occupied = [str(round(Singleton.position_pricel.x / 50) * 50, " ", round(Singleton.position_pricel.y / 50) * 50)]
+	if occupied in Singleton.occupied:
 		nothing = "nothing"
-	else:
+	elif freedom == true:
 		freedom = false
-		Singleton.occupied += occupied
+		Singleton.occupied += [occupied]
 		s = Singleton.position_pricel
 		var spawnling = gun.instance()
 		get_parent().get_parent().add_child(spawnling)
@@ -83,6 +85,7 @@ func spawn_gun():
 		timerbuild.start()
 		spawnling.global_position.x = round(Singleton.position_pricel.x / 50) * 50
 		spawnling.global_position.y = round(Singleton.position_pricel.y / 50) * 50
+		print(occupied)
 
 
 func _on_Timerbuild_timeout():
