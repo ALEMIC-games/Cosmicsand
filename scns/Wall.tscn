@@ -11,7 +11,7 @@
 z_index = 5
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 6.0
 autostart = true
 
 [node name="WALL" type="Sprite" parent="."]

@@ -1,16 +1,14 @@
 extends Node2D
 
 func _ready():
-	Singleton.occupied += [str(round(global_position.x / 50) * 50, " ", round(global_position.y / 50) * 50)]
-	
-	Singleton.occupied += [str(round(global_position.x / 50) * 50 + 50, " ", round(global_position.y / 50) * 50)]
-	Singleton.occupied += [str(round(global_position.x / 50) * 50 - 50, " ", round(global_position.y / 50) * 50)]
-	Singleton.occupied += [str(round(global_position.x / 50) * 50, " ", round(global_position.y / 50) * 50 + 50)]
-	Singleton.occupied += [str(round(global_position.x / 50) * 50, " ", round(global_position.y / 50) * 50 - 50)]
-	
-	Singleton.occupied += [str(round(global_position.x / 50) * 50 + 50, " ", round(global_position.y / 50) * 50 + 50)]
-	Singleton.occupied += [str(round(global_position.x / 50) * 50 - 50, " ", round(global_position.y / 50) * 50 - 50)]
-	Singleton.occupied += [str(round(global_position.x / 50) * 50 + 50, " ", round(global_position.y / 50) * 50 - 50)]
-	Singleton.occupied += [str(round(global_position.x / 50) * 50 - 50, " ", round(global_position.y / 50) * 50 + 50)]
+	Singleton.occupied += [[int(global_position.x), int(global_position.y)]]
 
-
+	Singleton.occupied += [[int(global_position.x + 50), int(global_position.y)]]
+	Singleton.occupied += [[int(global_position.x - 50), int(global_position.y)]]
+	Singleton.occupied += [[int(global_position.x), int(global_position.y + 50)]]
+	Singleton.occupied += [[int(global_position.x), int(global_position.y - 50)]]
+	
+	Singleton.occupied += [[int(global_position.x + 50), int(global_position.y + 50)]]
+	Singleton.occupied += [[int(global_position.x - 50), int(global_position.y - 50)]]
+	Singleton.occupied += [[int(global_position.x + 50), int(global_position.y - 50)]]
+	Singleton.occupied += [[int(global_position.x - 50), int(global_position.y + 50)]]

@@ -275,7 +275,7 @@ func _on_Timer_timeout():
 [node name="Generator" type="StaticBody2D"]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 6.0
 autostart = true
 
 [node name="GEN" type="AnimatedSprite" parent="."]
@@ -283,7 +283,7 @@ visible = false
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 1 )
 animation = "anime"
-frame = 66
+frame = 222
 speed_scale = 30.0
 playing = true
 script = SubResource( 2 )
@@ -298,5 +298,5 @@ script = ExtResource( 252 )
 scale = Vector2( 0.06, 0.06 )
 texture = ExtResource( 251 )
 
-[connection signal="timeout" from="Timer" to="CollisionShape2D" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="GEN" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="CollisionShape2D" method="_on_Timer_timeout"]
