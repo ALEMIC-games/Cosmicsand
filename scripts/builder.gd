@@ -45,7 +45,7 @@ func spawn_gen():
 	if not occupied in Singleton.occupied and freedom == true:
 		freedom = false
 		Singleton.occupied += [occupied]
-		s = Singleton.position_pricel
+		s = Vector2(int(round(Singleton.position_pricel.x / 50) * 50), int(round(Singleton.position_pricel.y / 50) * 50))
 		var spawnling = gen.instance()
 		get_parent().get_parent().add_child(spawnling)
 		spawnling.z_index = 2
@@ -53,14 +53,13 @@ func spawn_gen():
 		spawnling.global_position.x = round(Singleton.position_pricel.x / 50) * 50
 		spawnling.global_position.y = round(Singleton.position_pricel.y / 50) * 50
 
-
 func spawn_wall():
 	occupied = [int(round(Singleton.position_pricel.x / 50) * 50), int(round(Singleton.position_pricel.y / 50) * 50)]
 	if not occupied in Singleton.occupied and freedom == true:
 		freedom = false
 		Singleton.occupied += [occupied]
-		s = Singleton.position_pricel
-		var spawnling = gun.instance()
+		s = Vector2(int(round(Singleton.position_pricel.x / 50) * 50), int(round(Singleton.position_pricel.y / 50) * 50))
+		var spawnling = wall.instance()
 		get_parent().get_parent().add_child(spawnling)
 		spawnling.z_index = 2
 		timerbuild.start()
@@ -72,15 +71,13 @@ func spawn_gun():
 	if not occupied in Singleton.occupied and freedom == true:
 		freedom = false
 		Singleton.occupied += [occupied]
-		s = Singleton.position_pricel
+		s = Vector2(int(round(Singleton.position_pricel.x / 50) * 50), int(round(Singleton.position_pricel.y / 50) * 50))
 		var spawnling = gun.instance()
 		get_parent().get_parent().add_child(spawnling)
 		spawnling.z_index = 2
 		timerbuild.start()
 		spawnling.global_position.x = round(Singleton.position_pricel.x / 50) * 50
 		spawnling.global_position.y = round(Singleton.position_pricel.y / 50) * 50
-
-
 
 func _on_Timerbuild_timeout():
 	freedom = true
