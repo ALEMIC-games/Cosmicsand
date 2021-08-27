@@ -3,5 +3,5 @@
 [ext_resource path="res://interface/Ubuntu-Bold.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 120
+size = 60
 font_data = ExtResource( 1 )

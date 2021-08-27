@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="142.50792mm"
-   height="88.421356mm"
-   viewBox="0 0 142.50792 88.421356"
+   width="126.75391mm"
+   height="46.753906mm"
+   viewBox="0 0 126.75391 46.753906"
    version="1.1"
    id="svg5"
    inkscape:version="1.1 (c68e22c387, 2021-05-23)"
@@ -15,21 +15,21 @@
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
      id="namedview7"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0.0"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.46324355"
-     inkscape:cx="263.36039"
-     inkscape:cy="70.15748"
-     inkscape:window-width="1366"
-     inkscape:window-height="705"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:zoom="0.51150167"
+     inkscape:cx="483.86939"
+     inkscape:cy="319.64705"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
@@ -38,13 +38,13 @@
      inkscape:label="Слой 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-35.551684,-83.830446)">
-    <ellipse
-       style="fill:#5a5f6f;fill-opacity:1;stroke:#c83d39;stroke-width:7;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;stroke-miterlimit:4;stroke-dashoffset:0"
-       id="path846"
-       cx="106.80577"
-       cy="127.65289"
-       rx="66.253845"
-       ry="39.69519" />
+     transform="translate(13.376953,13.376953)">
+    <path
+       id="rect1048"
+       style="fill:#46464a;stroke-width:0.0508497;paint-order:stroke markers fill;fill-opacity:1"
+       sodipodi:type="inkscape:offset"
+       inkscape:radius="13.906532"
+       inkscape:original="M 0.52929688 0.52929688 L 0.52929688 19.470703 L 99.470703 19.470703 L 99.470703 0.52929688 L 0.52929688 0.52929688 z "
+       d="M 0.52929688,-13.376953 A 13.907923,13.907923 0 0 0 -13.376953,0.52929688 V 19.470703 A 13.907923,13.907923 0 0 0 0.52929688,33.376953 H 99.470703 A 13.907923,13.907923 0 0 0 113.37695,19.470703 V 0.52929688 A 13.907923,13.907923 0 0 0 99.470703,-13.376953 Z" />
   </g>
 </svg>

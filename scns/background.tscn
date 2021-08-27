@@ -1,6 +1,42 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://png/GRASS.png" type="Texture" id=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform bool rim_light = true;
+uniform float rim_thickness : hint_range(0, 40) = 10.0;
+uniform float rim_intense : hint_range(0, 1) = 1.0;
+uniform bool rim_extra_thick = false;
+
+void light() {
+	if (rim_light) {
+		vec2 size = TEXTURE_PIXEL_SIZE * rim_thickness;
+		float outline = texture(TEXTURE, UV + vec2(-size.x, 0)).a;
+		outline *= texture(TEXTURE, UV + vec2(0, size.y)).a;
+		outline *= texture(TEXTURE, UV + vec2(size.x, 0)).a;
+		outline *= texture(TEXTURE, UV + vec2(0, -size.y)).a;
+		if (rim_extra_thick) {
+			outline *= texture(TEXTURE, UV + vec2(-size.x, size.y)).a;
+			outline *= texture(TEXTURE, UV + vec2(size.x, size.y)).a;
+			outline *= texture(TEXTURE, UV + vec2(-size.x, -size.y)).a;
+			outline *= texture(TEXTURE, UV + vec2(size.x, -size.y)).a;
+		}
+		outline = 1.0 - outline;
+
+		vec4 color = texture(TEXTURE, UV);
+		float rim_cap = outline * color.a * rim_intense;
+		LIGHT += rim_cap;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/rim_light = true
+shader_param/rim_thickness = 10.0
+shader_param/rim_intense = 1.0
+shader_param/rim_extra_thick = false
 
 [node name="background" type="Node2D"]
 
@@ -10,6 +46,8 @@
 motion_mirroring = Vector2( 3840, 2160 )
 
 [node name="GRASS" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( 1920, 1080 )
+material = SubResource( 2 )
+position = Vector2( 240.966, 3576.72 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
+offset = Vector2( 839.517, -1248.36 )

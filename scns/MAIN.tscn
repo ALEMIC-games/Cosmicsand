@@ -1,13 +1,23 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://png/base.svg" type="Texture" id=1]
 [ext_resource path="res://png/pricel.svg" type="Texture" id=2]
 [ext_resource path="res://scns/background.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scns/Interface.tscn" type="PackedScene" id=4]
+[ext_resource path="res://interface/new_theme.tres" type="Theme" id=4]
 [ext_resource path="res://scns/natural.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/time.gd" type="Script" id=6]
 [ext_resource path="res://scripts/Camera2D.gd" type="Script" id=7]
 [ext_resource path="res://scripts/spawner_b.gd" type="Script" id=8]
+[ext_resource path="res://scripts/cokey.gd" type="Script" id=9]
+[ext_resource path="res://scripts/Menu.gd" type="Script" id=10]
 [ext_resource path="res://scripts/pricel.gd" type="Script" id=11]
+[ext_resource path="res://interface/new_dynamicfont.tres" type="DynamicFont" id=12]
+[ext_resource path="res://png/info.png" type="Texture" id=13]
+[ext_resource path="res://png/кнопка.svg" type="Texture" id=14]
+[ext_resource path="res://interface/menu.tres" type="DynamicFont" id=15]
+[ext_resource path="res://scns/обводка кнопки.gd" type="Script" id=16]
+[ext_resource path="res://png/обводка кнопки.svg" type="Texture" id=17]
+[ext_resource path="res://png/chat.png" type="Texture" id=18]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 194.903
@@ -16,6 +26,7 @@ radius = 194.903
 extents = Vector2( 666.715, 68.076 )
 
 [node name="Node" type="Node"]
+pause_mode = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -23,12 +34,147 @@ smoothing_enabled = true
 script = ExtResource( 7 )
 
 [node name="pricel" type="Sprite" parent="Camera2D"]
+visible = false
 scale = Vector2( 0.5, 0.5 )
 z_index = 50
 texture = ExtResource( 2 )
 script = ExtResource( 11 )
 
-[node name="Interface" parent="Camera2D" instance=ExtResource( 4 )]
+[node name="Interface" type="CanvasLayer" parent="Camera2D"]
+
+[node name="cokey" type="Label" parent="Camera2D/Interface"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1127.0
+margin_bottom = 208.0
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.0666667, 0.576471, 0.85098, 1 )
+custom_colors/font_outline_modulate = Color( 0.0666667, 0.576471, 0.85098, 1 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="time" type="Label" parent="Camera2D/Interface"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -1004.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = 208.0
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.0666667, 0.576471, 0.85098, 1 )
+custom_colors/font_outline_modulate = Color( 0.0666667, 0.576471, 0.85098, 1 )
+align = 2
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Day" type="Timer" parent="Camera2D/Interface/time"]
+wait_time = 216.0
+autostart = true
+
+[node name="Hour" type="Timer" parent="Camera2D/Interface/time"]
+wait_time = 6.0
+autostart = true
+
+[node name="Min" type="Timer" parent="Camera2D/Interface/time"]
+wait_time = 6.0
+autostart = true
+
+[node name="Sec" type="Timer" parent="Camera2D/Interface/time"]
+autostart = true
+
+[node name="Menu" type="Sprite" parent="Camera2D/Interface"]
+position = Vector2( 960, 750 )
+scale = Vector2( 0.7, 0.7 )
+z_index = 100
+script = ExtResource( 10 )
+
+[node name="кнопка" type="Sprite" parent="Camera2D/Interface/Menu"]
+position = Vector2( 700, 300 )
+scale = Vector2( 2.5, 1.5 )
+z_index = -1
+z_as_relative = false
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Button" type="Button" parent="Camera2D/Interface/Menu/кнопка"]
+anchor_right = 1.002
+anchor_bottom = 0.983
+margin_left = -240.0
+margin_top = -88.0
+margin_right = -33.958
+margin_bottom = -88.008
+rect_scale = Vector2( 0.7, 1 )
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 15 )
+custom_colors/font_color = Color( 0.0666667, 0.576471, 0.85098, 1 )
+custom_colors/font_color_hover = Color( 0.647059, 0.623529, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.533333, 0, 0, 1 )
+text = "EXIT AND SAVE"
+flat = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="обводка кнопки" type="Sprite" parent="Camera2D/Interface/Menu/кнопка"]
+visible = false
+position = Vector2( 1.96432, 0 )
+scale = Vector2( 1.01029, 1 )
+texture = ExtResource( 17 )
+script = ExtResource( 16 )
+
+[node name="кнопка2" type="Sprite" parent="Camera2D/Interface/Menu"]
+position = Vector2( -700, 300 )
+scale = Vector2( 2.5, 1.5 )
+z_index = -1
+z_as_relative = false
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Button" type="Button" parent="Camera2D/Interface/Menu/кнопка2"]
+anchor_right = 1.002
+anchor_bottom = 0.983
+margin_left = -240.0
+margin_top = -88.0
+margin_right = -33.958
+margin_bottom = -88.008
+rect_scale = Vector2( 0.7, 1 )
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 15 )
+custom_colors/font_color = Color( 0.0666667, 0.576471, 0.85098, 1 )
+custom_colors/font_color_hover = Color( 0.647059, 0.623529, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.054902, 0.533333, 0, 1 )
+text = "NEW BUILDER"
+flat = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="обводка кнопки" type="Sprite" parent="Camera2D/Interface/Menu/кнопка2"]
+visible = false
+position = Vector2( 1.96432, 0 )
+scale = Vector2( 1.01029, 1 )
+texture = ExtResource( 17 )
+script = ExtResource( 16 )
+
+[node name="info" type="Sprite" parent="Camera2D/Interface/Menu"]
+position = Vector2( -1000, -350 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 13 )
+
+[node name="chat" type="Sprite" parent="Camera2D/Interface/Menu"]
+position = Vector2( 1000, -350 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 18 )
 
 [node name="base" type="StaticBody2D" parent="."]
 
@@ -48,17 +194,31 @@ position = Vector2( 0, 113 )
 z_index = 1
 shape = SubResource( 2 )
 
-[node name="spawner_b1" type="Position2D" parent="."]
-position = Vector2( -300, 0 )
-scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 8 )
-
-[node name="spawner_b2" type="Position2D" parent="."]
-position = Vector2( 300, 0 )
-scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 8 )
+[node name="natural" parent="base" instance=ExtResource( 5 )]
+visible = false
 
 [node name="background" parent="." instance=ExtResource( 3 )]
 z_index = 20
 
-[node name="natural" parent="." instance=ExtResource( 5 )]
+[node name="spawner_b2" type="Position2D" parent="."]
+position = Vector2( 250, 0 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 8 )
+
+[node name="spawner_b1" type="Position2D" parent="."]
+position = Vector2( -250, 0 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 8 )
+
+[connection signal="timeout" from="Camera2D/Interface/time/Day" to="Camera2D/Interface/time" method="_on_Day_timeout"]
+[connection signal="timeout" from="Camera2D/Interface/time/Hour" to="Camera2D/Interface/time" method="_on_Hour_timeout"]
+[connection signal="timeout" from="Camera2D/Interface/time/Min" to="Camera2D/Interface/time" method="_on_Min_timeout"]
+[connection signal="timeout" from="Camera2D/Interface/time/Sec" to="Camera2D/Interface/time" method="_on_Sec_timeout"]
+[connection signal="script_changed" from="Camera2D/Interface/Menu" to="Camera2D/Interface/Menu/кнопка/обводка кнопки" method="_on_Menu_script_changed"]
+[connection signal="gui_input" from="Camera2D/Interface/Menu/кнопка/Button" to="Camera2D/Interface/Menu/кнопка/обводка кнопки" method="_on_Button_gui_input"]
+[connection signal="mouse_exited" from="Camera2D/Interface/Menu/кнопка/Button" to="Camera2D/Interface/Menu/кнопка/обводка кнопки" method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="Camera2D/Interface/Menu/кнопка/Button" to="Camera2D/Interface/Menu" method="_on_Button_pressed"]
+[connection signal="gui_input" from="Camera2D/Interface/Menu/кнопка2/Button" to="Camera2D/Interface/Menu/кнопка2/обводка кнопки" method="_on_Button_gui_input"]
+[connection signal="mouse_exited" from="Camera2D/Interface/Menu/кнопка2/Button" to="Camera2D/Interface/Menu/кнопка2/обводка кнопки" method="_on_Button_mouse_exited"]
+[connection signal="pressed" from="Camera2D/Interface/Menu/кнопка2/Button" to="spawner_b2" method="_on_Button_pressed"]
+[connection signal="pressed" from="Camera2D/Interface/Menu/кнопка2/Button" to="spawner_b1" method="_on_Button_pressed"]

@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="1920mm"
-   height="1080mm"
-   viewBox="0 0 1920 1080"
+   width="318.1131mm"
+   height="164.35913mm"
+   viewBox="0 0 318.1131 164.35913"
    version="1.1"
    id="svg5"
    inkscape:version="1.1 (c68e22c387, 2021-05-23)"
-   sodipodi:docname="bg.svg"
+   sodipodi:docname="рисунок.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.06393771"
-     inkscape:cx="1524.9217"
-     inkscape:cy="414.46589"
+     inkscape:zoom="0.72337262"
+     inkscape:cx="683.60342"
+     inkscape:cy="368.41317"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
      inkscape:window-x="-9"
@@ -38,13 +38,10 @@
      inkscape:label="Слой 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-38.770939,-62.911327)">
-    <rect
-       style="fill:#ffffff;fill-opacity:0.0344828;stroke-width:0.264583"
-       id="rect846"
-       width="1920"
-       height="1080"
-       x="38.770939"
-       y="62.911327" />
+     transform="translate(75.845343,-109.03169)">
+    <path
+       style="fill:#0072c5;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 53.767241,111.19212 c 31.429978,-6.43291 63.107999,3.56289 92.538179,14.26478 63.82957,23.21075 95.83004,45.77943 95.83004,113.75246 0,10.88422 -3.44915,27.85701 -14.9963,32.18718 -36.30376,13.61392 -38.43946,-51.99868 -74.98153,-45.35467 -22.76099,4.13836 -42.14421,14.59156 -63.642854,19.75123 -41.202006,9.88848 -90.5751667,-4.97135 -130.577583,-11.70443 -21.281178,-3.58198 -33.650245,0.0665 -33.650245,-24.1404 0,-82.17996 118.636578,-68.39375 129.480293,-98.75615 z"
+       id="path857" />
   </g>
 </svg>

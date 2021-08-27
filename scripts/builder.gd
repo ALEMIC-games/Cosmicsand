@@ -24,14 +24,12 @@ func _physics_process(delta):
 		var vel = global_position.direction_to(s)
 		look_at(vel)
 		vel = move_and_slide(vel*delta*SPEED)
-	if Input.is_action_just_pressed("build_generator"):
+	if Input.is_action_just_pressed("skm"):
 		spawn_gen()
-	if Input.is_action_just_pressed("build_wall"):
+	if Input.is_action_just_pressed("lkm"):
 		spawn_wall()
-	if Input.is_action_just_pressed("build_gun"):
+	if Input.is_action_just_pressed("pkm"):
 		spawn_gun()
-
-
 #перемещение строителя по вектору и строительство
 var gun = preload("res://scns/Gun.tscn")
 var wall = preload("res://scns/Wall.tscn")
