@@ -167,12 +167,12 @@ texture = ExtResource( 17 )
 script = ExtResource( 16 )
 
 [node name="info" type="Sprite" parent="Camera2D/Interface/Menu"]
-position = Vector2( -1000, -350 )
+position = Vector2( -1095, -350 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 13 )
 
 [node name="chat" type="Sprite" parent="Camera2D/Interface/Menu"]
-position = Vector2( 1000, -350 )
+position = Vector2( 1095, -350 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 18 )
 
