@@ -30,6 +30,7 @@ pause_mode = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+zoom = Vector2( 2, 2 )
 smoothing_enabled = true
 script = ExtResource( 7 )
 
