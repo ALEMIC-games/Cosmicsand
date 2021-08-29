@@ -168,12 +168,12 @@ texture = ExtResource( 17 )
 script = ExtResource( 16 )
 
 [node name="info" type="Sprite" parent="Camera2D/Interface/Menu"]
-position = Vector2( -1095, -350 )
+position = Vector2( -950, -350 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 13 )
 
 [node name="chat" type="Sprite" parent="Camera2D/Interface/Menu"]
-position = Vector2( 1095, -350 )
+position = Vector2( 950, -350 )
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 18 )
 
@@ -221,5 +221,5 @@ script = ExtResource( 8 )
 [connection signal="pressed" from="Camera2D/Interface/Menu/кнопка/Button" to="Camera2D/Interface/Menu" method="_on_Button_pressed"]
 [connection signal="gui_input" from="Camera2D/Interface/Menu/кнопка2/Button" to="Camera2D/Interface/Menu/кнопка2/обводка кнопки" method="_on_Button_gui_input"]
 [connection signal="mouse_exited" from="Camera2D/Interface/Menu/кнопка2/Button" to="Camera2D/Interface/Menu/кнопка2/обводка кнопки" method="_on_Button_mouse_exited"]
-[connection signal="pressed" from="Camera2D/Interface/Menu/кнопка2/Button" to="spawner_b2" method="_on_Button_pressed"]
 [connection signal="pressed" from="Camera2D/Interface/Menu/кнопка2/Button" to="spawner_b1" method="_on_Button_pressed"]
+[connection signal="pressed" from="Camera2D/Interface/Menu/кнопка2/Button" to="spawner_b2" method="_on_Button_pressed"]
