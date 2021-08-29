@@ -11,7 +11,7 @@
 z_index = 5
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 30.0
 autostart = true
 
 [node name="WALL" type="Sprite" parent="."]
@@ -31,5 +31,5 @@ script = ExtResource( 4 )
 scale = Vector2( 0.06, 0.06 )
 texture = ExtResource( 2 )
 
-[connection signal="timeout" from="Timer" to="WALL" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="CollisionShape2D" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="WALL" method="_on_Timer_timeout"]

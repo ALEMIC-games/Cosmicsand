@@ -77,7 +77,7 @@ wait_time = 216.0
 autostart = true
 
 [node name="Hour" type="Timer" parent="Camera2D/Interface/time"]
-wait_time = 6.0
+wait_time = 36.0
 autostart = true
 
 [node name="Min" type="Timer" parent="Camera2D/Interface/time"]
