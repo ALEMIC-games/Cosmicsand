@@ -11,3 +11,5 @@ var occupied = []
 
 var hour
 
+var need_color_button = false
+

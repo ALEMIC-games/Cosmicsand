@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/time.gd" type="Script" id=3]
+[ext_resource path="res://scripts/cokey.gd" type="Script" id=5]
+[ext_resource path="res://interface/new_dynamicfont.tres" type="DynamicFont" id=13]
+
+[node name="Interface" type="CanvasLayer"]
+
+[node name="cokey" type="Label" parent="."]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1127.0
+margin_bottom = 208.0
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 0.0666667, 0.576471, 0.85098, 1 )
+custom_colors/font_outline_modulate = Color( 0.0666667, 0.576471, 0.85098, 1 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="time" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -1004.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = 208.0
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 0.0666667, 0.576471, 0.85098, 1 )
+custom_colors/font_outline_modulate = Color( 0.0666667, 0.576471, 0.85098, 1 )
+align = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Day" type="Timer" parent="time"]
+wait_time = 216.0
+autostart = true
+
+[node name="Hour" type="Timer" parent="time"]
+wait_time = 36.0
+autostart = true
+
+[node name="Min" type="Timer" parent="time"]
+wait_time = 6.0
+autostart = true
+
+[node name="Sec" type="Timer" parent="time"]
+autostart = true
+
+[connection signal="timeout" from="time/Day" to="time" method="_on_Day_timeout"]
+[connection signal="timeout" from="time/Hour" to="time" method="_on_Hour_timeout"]
+[connection signal="timeout" from="time/Min" to="time" method="_on_Min_timeout"]
+[connection signal="timeout" from="time/Sec" to="time" method="_on_Sec_timeout"]

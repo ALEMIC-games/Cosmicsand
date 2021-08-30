@@ -1,4 +1,4 @@
-[gd_scene load_steps=256 format=2]
+[gd_scene load_steps=257 format=2]
 
 [ext_resource path="res://animations/png gen/0002.png" type="Texture" id=1]
 [ext_resource path="res://animations/png gen/0003.png" type="Texture" id=2]
@@ -266,13 +266,20 @@ script/source = "extends AnimatedSprite
 
 func _on_Timer_timeout():
 	visible = true
-	z_index = 7
 	Singleton.cokey += 1
 "
 
 [sub_resource type="RectangleShape2D" id=3]
 
+[sub_resource type="GDScript" id=4]
+script/source = "extends Sprite
+
+func _on_Timer_timeout():
+	visible = false
+"
+
 [node name="Generator" type="StaticBody2D"]
+z_index = 7
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 30.0
@@ -283,7 +290,7 @@ visible = false
 scale = Vector2( 0.1, 0.1 )
 frames = SubResource( 1 )
 animation = "anime"
-frame = 5
+frame = 189
 speed_scale = 30.0
 playing = true
 script = SubResource( 2 )
@@ -297,6 +304,8 @@ script = ExtResource( 252 )
 [node name="spawnpoint" type="Sprite" parent="."]
 scale = Vector2( 0.06, 0.06 )
 texture = ExtResource( 251 )
+script = SubResource( 4 )
 
 [connection signal="timeout" from="Timer" to="CollisionShape2D" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer" to="GEN" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="spawnpoint" method="_on_Timer_timeout"]
