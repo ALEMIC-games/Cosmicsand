@@ -2,17 +2,31 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="126.75391mm"
    height="46.753906mm"
    viewBox="0 0 126.75391 46.753906"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
-   sodipodi:docname="кнопка.svg"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="обводка кнопки.svg">
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
   <sodipodi:namedview
      id="namedview7"
      pagecolor="#505050"
@@ -24,12 +38,12 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="1.0230033"
-     inkscape:cx="213.58679"
-     inkscape:cy="219.45187"
-     inkscape:window-width="1920"
-     inkscape:window-height="1001"
-     inkscape:window-x="-9"
-     inkscape:window-y="-9"
+     inkscape:cx="-211.63178"
+     inkscape:cy="211.63175"
+     inkscape:window-width="1848"
+     inkscape:window-height="1016"
+     inkscape:window-x="72"
+     inkscape:window-y="27"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
@@ -41,7 +55,7 @@
      transform="translate(13.376953,13.376953)">
     <path
        id="rect1048"
-       style="fill:none;stroke-width:3;paint-order:stroke markers fill;stroke:#ffffff;stroke-opacity:0.75090253;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:#485250;fill-opacity:1;stroke-width:0.0508497;paint-order:stroke markers fill"
        sodipodi:type="inkscape:offset"
        inkscape:radius="13.906532"
        inkscape:original="M 0.52929688 0.52929688 L 0.52929688 19.470703 L 99.470703 19.470703 L 99.470703 0.52929688 L 0.52929688 0.52929688 z "

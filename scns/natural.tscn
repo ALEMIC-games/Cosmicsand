@@ -7,86 +7,102 @@
 
 [node name="collision points" type="Node" parent="."]
 
-[node name="collisionpont7" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( -450, -150 )
-
-[node name="collisionpont9" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( -300, -150 )
-
-[node name="collisionpont10" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( -150, -150 )
-
-[node name="collisionpont12" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( 0, -150 )
-
-[node name="collisionpont13" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( 150, -150 )
-
-[node name="collisionpont14" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( 300, -150 )
-
-[node name="collisionpont15" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( 450, -150 )
-
-[node name="collisionpont16" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( 600, -150 )
-
-[node name="collisionpont28" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( -600, -150 )
-
-[node name="collisionpont8" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( -450, 0 )
-
-[node name="collisionpont11" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( -300, 0 )
-
 [node name="collisionpont17" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( -150, 0 )
+position = Vector2( -250, -50 )
 
 [node name="collisionpont18" parent="collision points" instance=ExtResource( 1 )]
+position = Vector2( 0, -50 )
 
 [node name="collisionpont19" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( 150, 0 )
+position = Vector2( 250, -50 )
 
 [node name="collisionpont20" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( 300, 0 )
-
-[node name="collisionpont21" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( 450, 0 )
+position = Vector2( -250, 50 )
 
 [node name="collisionpont22" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( 600, 0 )
-
-[node name="collisionpont29" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( -600, 0 )
+position = Vector2( 0, 50 )
 
 [node name="collisionpont23" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( -450, 150 )
+position = Vector2( 250, 50 )
+
+[node name="collisionpont21" parent="collision points" instance=ExtResource( 1 )]
+position = Vector2( -400, -50 )
 
 [node name="collisionpont24" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( -300, 150 )
+position = Vector2( -400, 50 )
 
 [node name="collisionpont25" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( -150, 150 )
+position = Vector2( 400, -50 )
 
 [node name="collisionpont26" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( 0, 150 )
+position = Vector2( 400, 50 )
 
 [node name="collisionpont27" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( 150, 150 )
+position = Vector2( -8250, -4250 )
+z_index = 2
+
+[node name="collisionpont27" parent="collision points/collisionpont27" instance=ExtResource( 1 )]
+position = Vector2( 250, 0 )
+z_index = 2
+
+[node name="collisionpont28" parent="collision points" instance=ExtResource( 1 )]
+position = Vector2( -8250, -4000 )
+z_index = 2
+
+[node name="collisionpont27" parent="collision points/collisionpont28" instance=ExtResource( 1 )]
+position = Vector2( 250, 0 )
+z_index = 2
+
+[node name="collisionpont29" parent="collision points" instance=ExtResource( 1 )]
+position = Vector2( -7750, -4250 )
+z_index = 2
+
+[node name="collisionpont27" parent="collision points/collisionpont29" instance=ExtResource( 1 )]
+position = Vector2( 250, 0 )
+z_index = 2
 
 [node name="collisionpont30" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( 300, 150 )
+position = Vector2( -7750, -4000 )
+z_index = 2
+
+[node name="collisionpont27" parent="collision points/collisionpont30" instance=ExtResource( 1 )]
+position = Vector2( 250, 0 )
+z_index = 2
 
 [node name="collisionpont31" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( 450, 150 )
+position = Vector2( -8250, -4250 )
+z_index = 2
+
+[node name="collisionpont27" parent="collision points/collisionpont31" instance=ExtResource( 1 )]
+position = Vector2( 250, -500 )
+z_index = 2
 
 [node name="collisionpont32" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( 600, 150 )
+position = Vector2( -8250, -4000 )
+z_index = 2
+
+[node name="collisionpont27" parent="collision points/collisionpont32" instance=ExtResource( 1 )]
+position = Vector2( 250, 0 )
+z_index = 2
 
 [node name="collisionpont33" parent="collision points" instance=ExtResource( 1 )]
-position = Vector2( -600, 150 )
+position = Vector2( -7750, -4750 )
+z_index = 2
+
+[node name="collisionpont27" parent="collision points/collisionpont33" instance=ExtResource( 1 )]
+position = Vector2( 250, 0 )
+z_index = 2
+
+[node name="collisionpont34" parent="collision points" instance=ExtResource( 1 )]
+position = Vector2( -7750, -4000 )
+z_index = 2
+
+[node name="collisionpont27" parent="collision points/collisionpont34" instance=ExtResource( 1 )]
+position = Vector2( 250, 0 )
+z_index = 2
 
 [node name="рисунок" type="Sprite" parent="."]
-position = Vector2( -1250, -850 )
+position = Vector2( -4750, -5000 )
+rotation = -0.579449
+scale = Vector2( 5.52014, 4.27068 )
 texture = ExtResource( 2 )

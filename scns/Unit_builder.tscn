@@ -9,16 +9,16 @@ input_pickable = true
 script = ExtResource( 1 )
 
 [node name="builder" type="Sprite" parent="."]
-rotation = 4.71239
+rotation = -1.5708
 scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 2 )
 
 [node name="Timervel" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 5.0
 autostart = true
 
 [node name="Timerbuild" type="Timer" parent="."]
-wait_time = 30.0
+wait_time = 6.0
 one_shot = true
 
 [connection signal="timeout" from="Timervel" to="." method="_on_Timervel_timeout"]

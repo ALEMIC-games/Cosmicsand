@@ -7,6 +7,7 @@ var sit_rand_y = 0
 onready var timervel = $Timervel
 var timing1 = 2
 var freedom = true
+var spawnling = false
 
 func _on_Timervel_timeout():
 	timing1 += 1
@@ -25,57 +26,42 @@ func _physics_process(delta):
 		look_at(vel)
 		vel = move_and_slide(vel*delta*SPEED)
 	if Input.is_action_pressed("skm"):
-		spawn_gen()
+		spawn(gen)
 	if Input.is_action_pressed("lkm"):
-		spawn_wall()
+		spawn(wall)
 	if Input.is_action_pressed("pkm"):
-		spawn_gun()
+		spawn(gun)
+	if spawnling is Object:
+		if spawnling.global_position.distance_to(global_position) < 10:
+			var spawnling1 = process_building.instance()
+			get_parent().get_parent().add_child(spawnling1)
+			timerbuild.start()
+			spawnling1.global_position.x = round(spawnling.global_position.x / 50) * 50
+			spawnling1.global_position.y = round(spawnling.global_position.y / 50) * 50
+			timerbuild.start()
+			spawnling = false
+	
 #перемещение строителя по вектору и строительство
 var gun = preload("res://scns/Gun.tscn")
 var wall = preload("res://scns/Wall.tscn")
 var gen = preload("res://scns/Generator.tscn")
+var spawnpoint = preload("res://scns/spawnpoint.tscn")
+var process_building = false
 var occupied = str("")
-var timing2 = false
 onready var timerbuild = $Timerbuild
 
-func spawn_gen():
+func spawn(obj):
 	occupied = [int(round(Singleton.position_pricel.x / 50) * 50), int(round(Singleton.position_pricel.y / 50) * 50)]
 	if not occupied in Singleton.occupied and freedom == true:
 		freedom = false
 		Singleton.occupied += [occupied]
 		s = Vector2(int(round(Singleton.position_pricel.x / 50) * 50), int(round(Singleton.position_pricel.y / 50) * 50))
-		var spawnling = gen.instance()
+		spawnling = spawnpoint.instance()
 		get_parent().get_parent().add_child(spawnling)
-		spawnling.z_index = 2
-		timerbuild.start()
 		spawnling.global_position.x = round(Singleton.position_pricel.x / 50) * 50
 		spawnling.global_position.y = round(Singleton.position_pricel.y / 50) * 50
+		process_building = obj
 
-func spawn_wall():
-	occupied = [int(round(Singleton.position_pricel.x / 50) * 50), int(round(Singleton.position_pricel.y / 50) * 50)]
-	if not occupied in Singleton.occupied and freedom == true:
-		freedom = false
-		Singleton.occupied += [occupied]
-		s = Vector2(int(round(Singleton.position_pricel.x / 50) * 50), int(round(Singleton.position_pricel.y / 50) * 50))
-		var spawnling = wall.instance()
-		get_parent().get_parent().add_child(spawnling)
-		spawnling.z_index = 2
-		timerbuild.start()
-		spawnling.global_position.x = round(Singleton.position_pricel.x / 50) * 50
-		spawnling.global_position.y = round(Singleton.position_pricel.y / 50) * 50
-
-func spawn_gun():
-	occupied = [int(round(Singleton.position_pricel.x / 50) * 50), int(round(Singleton.position_pricel.y / 50) * 50)]
-	if not occupied in Singleton.occupied and freedom == true:
-		freedom = false
-		Singleton.occupied += [occupied]
-		s = Vector2(int(round(Singleton.position_pricel.x / 50) * 50), int(round(Singleton.position_pricel.y / 50) * 50))
-		var spawnling = gun.instance()
-		get_parent().get_parent().add_child(spawnling)
-		spawnling.z_index = 2
-		timerbuild.start()
-		spawnling.global_position.x = round(Singleton.position_pricel.x / 50) * 50
-		spawnling.global_position.y = round(Singleton.position_pricel.y / 50) * 50
 
 func _on_Timerbuild_timeout():
 	freedom = true
